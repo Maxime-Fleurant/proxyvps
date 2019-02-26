@@ -6,7 +6,7 @@ httpProxy.createServer(function (req, res, proxy) {
 
 if(req.headers.host == 'thebrutalistdb.com') {
   proxy.proxyRequest(req, res, {
-    host: 'thebrutalistdb.com',
+    host: 'http://thebrutalistdb.com',
     port: 3000
   });
 } else {
