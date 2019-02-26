@@ -22,6 +22,10 @@ var server = http.createServer(function(req, res) {
 
     proxy.web(req, res, { target : 'http://localhost:3000' });
 
+  } else if (req.headers.host == 'babyloncartridge.com') {
+
+    proxy.web(req, res, { target : 'http://localhost:3000' });
+
   }
 
   
