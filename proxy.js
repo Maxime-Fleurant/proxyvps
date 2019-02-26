@@ -13,20 +13,4 @@ httpProxy = require('http-proxy');
 // }
 // }).listen(80);
 
-var proxy = httpProxy.createProxyServer({});
-
-http.createServer(function(req, res) {
-
-  console.log(req.headers.host)
-
-  if (req.headers.host == "thebrutalistdb.com") {
-
-    proxy.web(req, res, {target: 'localhost:3000'});
-
-  } else if (req.headers.host == "babyloncartridge.com") {
-
-    proxy.web(req, res, {target: 'localhost:4000'});
-
-  }
-  // proxy.web(req, res, { target: 'http://127.0.0.1:5060' });
-}).listen(80);
+httpProxy.createProxyServer({target:'http://localhost:3000'}).listen(80);
